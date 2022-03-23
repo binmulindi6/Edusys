@@ -6,10 +6,10 @@ function openLeftMenu() {
     document.getElementById("sidebar").style.display = "none";
   }
   
-  function reveal() {
-    var reveals = document.querySelectorAll(".the-banner");
   
-    for (var i = 0; i < reveals.length; i++) {
+    var reveals = document.querySelectorAll(".banner");
+    var i = 0;
+    if (i < reveals.length) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
       var elementVisible = 40;
@@ -20,6 +20,6 @@ function openLeftMenu() {
         reveals[i].classList.remove("active");
       }
     }
-  }
-  
-  window.addEventListener("scroll", reveal);
+
+
+  /*window.addEventListener("scroll", reveal);*/

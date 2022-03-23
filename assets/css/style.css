@@ -1,5 +1,5 @@
 *{
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     
 }
 
@@ -66,7 +66,7 @@ nav{
 }
 
 nav a{
-    color: red;
+    color: #dd1c1c;
 }
 
 .nav-link{
@@ -78,11 +78,11 @@ nav a{
 
 
  .active{
-    color: red;
+    color: #dd1c1c;
 }
 
 .nav-link:hover{
-    color: red;
+    color: #dd1c1c;
 }
 
 .navbar-nav-left-side{
@@ -99,7 +99,7 @@ nav a{
 	width: 0;
 	height: 0;
 	border-width: 0 0 60px 60px;
-	border-color: transparent transparent #FF0000 transparent;
+	border-color: transparent transparent #dd1c1c transparent;
 	border-style: solid;
 }
 .navbar-search-side{
@@ -108,7 +108,7 @@ nav a{
     height: 60px;
     display: flex;
     right: 0;
-    background-color: red;
+    background-color: #dd1c1c;
     justify-content: center;
     align-items: center;
 }
@@ -125,7 +125,7 @@ nav a{
     background: none;
     width: 320px;
     padding-left: 10px;
-    color: red;
+    color: #dd1c1c;
     font-family: 'Outfit' sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -147,7 +147,7 @@ nav a{
 }
 
 .btn-search .material-icons{
-    color: red;
+    color: #dd1c1c;
     font-weight: 600;
 }
 
@@ -251,12 +251,13 @@ form{
     font-family: 'Outfit',sans-serif;
 }
 #icon-pres{
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
     margin: auto;
     text-align: center;
 }
 .form-container{
+    /*position: relative;*/
     width: 350px;
     /*border-left: 1px solid #ffff;
     line-height: 50px;*/
@@ -264,6 +265,32 @@ form{
     box-shadow: 2px 2px 10px rgba(154, 144, 238, 0.953);
     text-align: center;
 }
+
+/***********
+.form-container::before, .form-container::after
+{
+    position: absolute;
+    content: "";
+    display: block;
+    height: 26%;
+    width: 3px;
+    border-radius: 2px  ;
+    background: #1b66e9;
+    box-shadow: 2px 2px 5px #695edafa, -2px -2px 5px #695edafa;
+
+}
+.form-container::before
+{
+    left: 0;
+    top:18%;
+}
+.form-container::after
+{
+    bottom: 18%;
+    right: 0;
+}
+
+*********/
 
 .form-container .title{
     display: block;
@@ -333,23 +360,64 @@ main .material-icons{
     background-color: rgb(255, 255, 255);
 }
 
-.the-banner{
-    background: url(https://edusys.ulbu.bi/assets/images/gross_line_2.jpg) #FF0000 no-repeat ;
-    background-size: cover;
+.banner{
     height: 100px;
     width: 930px;
     position: relative;
     bottom: 45px;
-    display: flex;
-    transform: translateY(50px);
+    transform: scale(0.9);
     opacity: 0;
     transition: 1s all ease-out;
 }
- 
 
+.banner-bg{
+    height: 100px;
+    width: 930px;
+    position: absolute;
+    display: flex;
+    background-color: #F5D11C;
+    z-index: -1;
+}
 
-.the-banner.active{
-    transform: translateY(0);
+.banner-bg-red{
+    width: 62%;
+    display: flex;
+   
+}
+
+.banner-rectangle{
+    height: 100px;
+    width: 100%;
+    background-color: #dd1c1c;
+}
+
+.banner-triangle10{
+    /*position: absolute;*/
+    margin-left: 10px;
+	width: 0;
+	height: 0;
+	border-width: 0 0 100px 40px;
+	border-color: transparent transparent #dd1c1c transparent;
+	border-style: solid;
+}
+
+.banner-bg-yellow{
+    height: 100%;
+    width: 38%;
+    background-color: #F5D11C;
+}
+
+.the-banner{
+    /*background: url(https://edusys.ulbu.bi/assets/images/gross_line_2.jpg) #dd1c1c no-repeat ;*/
+    background-size: cover;
+    height: 100px;
+    width: 930px;
+    display: flex;
+    
+}
+
+.banner.active{
+    transform: scale(1);
     opacity: 1;
 }
 
@@ -382,10 +450,15 @@ main .material-icons{
     margin-right: 15px;
     color: #fff;
     font-weight: 600;
-    background-color: #FF0000;
+    background-color: #dd1c1c;
     border: 2px solid #fff;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btn-envoyer::after{
+    border-right: 2px solid rgb(0, 0, 0);
+    left: 10px;
 }
 
 .banner-feature-right{
@@ -464,6 +537,65 @@ footer a{
 }
 
 
+/********** UPDATES //////////*/
+
+@media all and (min-width: 1024px) and (min-height: 600px){
+
+    body{
+        height: 100vh;
+    }
+    .page-container{
+        height: 100%;
+    }
+    main{
+        height: auto;
+        margin: 0;
+        padding-top: 60px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-content{
+        box-sizing: border-box;
+        height: 100%;
+        padding-top: 0;
+    }
+
+    
+}
+
+@media all and (min-width: 1024px) and (min-height: 600px) and (max-width: 1400px) and (max-height: 700px) {
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+    }
+    main{
+        min-height: auto;
+        padding-top: 90px;
+    }
+}
+
+@media all and (max-width: 1024px) and (max-height: 635px) {
+
+    #icon-pres{
+        height: 100px;
+        width: 100px;
+    }
+
+    .form-container .title{
+        font-size: 1.8rem;
+    }
+
+}
+
+
+
+/*********************************/
+
 @media all and (min-width: 1024px) and (max-width: 1280px) {
     #sidebar{
         display: none;
@@ -498,7 +630,7 @@ footer a{
         font-size: 3rem;
         top: 10px;
         right: 15px;
-        color: red;
+        color: #dd1c1c;
         cursor: pointer;
     }
 
@@ -562,7 +694,7 @@ footer a{
         position: fixed;
         top: 15px;
         right: 15px;
-        color: red;
+        color: #dd1c1c;
         font-size: 3rem;
         cursor: pointer;
     
@@ -578,7 +710,7 @@ footer a{
     }
     
     .sidebar-menu a {
-        color: red;
+        color: #dd1c1c;
         padding: 10px 10px 10px 20px;
         font-size: 1.5rem;
         font-weight: 600;
@@ -587,7 +719,7 @@ footer a{
       }
        
       .sidebar a:hover {
-          background-color: #FF0000;
+          background-color: #dd1c1c;
         color: #fff;
       }
 
@@ -614,6 +746,8 @@ footer a{
     }*/
     
 }
+
+
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
     
@@ -673,5 +807,11 @@ footer a{
 
     .btn-primary{
         font-size: 1rem;
+    }
+}
+
+@media all  and (max-height: 635px){
+    .my-form-element{
+        margin: 5px;
     }
 }
